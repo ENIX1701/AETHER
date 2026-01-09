@@ -18,10 +18,10 @@ AETHER is a C2 framework written in Rust with implants in C or C++. It's main go
 ## Definition of done
 
 I'll consider the first release version of AETHER done, when the following criteria are met:
-1. All CHARON, GHOST and SHADOW are done on their own
+1. All CHARON, GHOST and SHADOW are done on their own (CHARON - in progress, GHOST - in progress, SHADOW - done)
 2. CHARON is fully integrated with SHADOW
 3. SHADOW can send commands and receive data from GHOSTs
 4. GHOSTs are deployable to Windows machines and are not instantly deleted by Defender
-5. All the modules have at least 60% unit test coverage (preferably >90%, but we know how those kinds of wished end)
-6. The communication interfaces are thoroughly documented
+5. All the modules have at least 60% unit test coverage (preferably >90%, but we know how those kinds of wishes end)
+6. The communication interfaces are thoroughly documented (basic documentation in place in SHADOW repository)
 7. The whole project is deployable with a single Docker compose file (server with compiled implant download + CHARON in another container) with step-by-step instructions of how to deploy and use it

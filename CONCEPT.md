@@ -1,6 +1,6 @@
 # The concept
 
-AETHER is a C2 framework written in Rust with implants in C or C++. It's main goal is to aid red teams in tests and assignments.
+AETHER is a C2 framework written in Rust with implants in C++. Its main goal is to aid red teams in tests and assignments.
 
 ## High-level architecture
 
@@ -20,7 +20,7 @@ AETHER is a C2 framework written in Rust with implants in C or C++. It's main go
 
 **Role:** Server side component  
 **Platforms:** Linux  
-**Idea:** Handles beacon requests and manages the implants  
+**Idea:** Handles beacon requests and manages GHOSTs  
 **Capabilities:**
 - Handle multiple concurrent implants
 - Send out instructions and tasks
@@ -34,4 +34,4 @@ AETHER is a C2 framework written in Rust with implants in C or C++. It's main go
 **Idea:** Makes it possible to manage the SHADOW and generate GHOSTs, all from the terminal  
 **Capabilities:**
 - Customize, generate (possibly in the future...) and deploy implants
-- Manage SHADOW
+- Manage GHOSTs through SHADOW
