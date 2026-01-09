@@ -12,3 +12,4 @@ AETHER is a C2 framework written in Rust with implants in C or C++. It's main go
 - [ ] (CHARON) Create a moodboard of TUI designs
 - [ ] (CHARON) Basic menu panel
 - [ ] (CHARON) Modular architecture schema
+- [ ] (AETHER) Create an interface guide for all communication interfaces (will make maintenance so much easier) 
