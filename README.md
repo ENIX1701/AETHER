@@ -1,4 +1,6 @@
-# AETHER
+<!-- ![AETHER](aether-ascii.png) -->
+<img src="aether-ascii.png" alt="AETHER" style="width: 100%;">
+
 
 AETHER is a C2 framework written in Rust with implants in C or C++. It's main goal is to aid red teams in tests and assignments.
 
