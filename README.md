@@ -1,6 +1,4 @@
-<!-- ![AETHER](aether-ascii.png) -->
 <img src="aether-ascii.png" alt="AETHER" style="width: 100%;">
-
 
 AETHER is a C2 framework written in Rust with implants in C or C++. It's main goal is to aid red teams in tests and assignments.
 
@@ -23,7 +21,7 @@ AETHER is a C2 framework written in Rust with implants in C or C++. It's main go
 I'll consider the first release version of AETHER done, when the following criteria are met:
 1. All CHARON, GHOST and SHADOW are done on their own (CHARON - done, not fully tested; GHOST - pivot in progress; SHADOW - done, with complete test-suite)
 2. CHARON is fully integrated with SHADOW (done)
-3. SHADOW can send commands and receive data from GHOSTs
+3. SHADOW can send commands and receive data from GHOSTs (sending commands works, receiving data getting debugged)
 4. GHOSTs are deployable to Linux machines and are not instantly deleted
 5. ~~All the modules~~ SHADOW has at least 60% unit test coverage (preferably >90%, but we know how those kinds of wishes end) -> (done)
 6. The communication interfaces are thoroughly documented (basic documentation in place in SHADOW repository, I consider this done)
