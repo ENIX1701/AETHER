@@ -22,7 +22,7 @@ I'll consider the first release version of AETHER done, when the following crite
 1. All CHARON, GHOST and SHADOW are done on their own (CHARON - done; GHOST - done; SHADOW - done, with complete test-suite)
 2. CHARON is fully integrated with SHADOW (done)
 3. SHADOW can send commands and receive data from GHOSTs (done)
-4. GHOSTs are deployable to Linux machines and are not instantly deleted
+4. GHOSTs are deployable to Linux machines and are not instantly deleted (done; currently the deploy is manual)
 5. ~~All the modules~~ SHADOW has at least 60% unit test coverage (preferably >90%, but we know how those kinds of wishes end) -> (done)
 6. The communication interfaces are thoroughly documented (basic documentation in place in SHADOW repository, I consider this done)
-7. The whole project is deployable with a single Docker compose file (server with compiled implant download + CHARON in another container with GHOST builder fully implemented) with step-by-step instructions of how to deploy and use it
+7. The whole project is deployable with a single Docker compose file (server with compiled implant download + CHARON in another container with GHOST builder fully implemented) with step-by-step instructions on how to deploy and use it
