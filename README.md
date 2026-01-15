@@ -13,7 +13,7 @@ AETHER is a C2 framework written in Rust with implants in C or C++. It's main go
 - [x] (CHARON) Basic menu panel 
 - [ ] (CHARON) Modular architecture schema -> generate GHOSTs with custom configurations
 - [x] (AETHER) Create an interface guide for all communication interfaces (will make maintenance so much easier) -> SHADOW endpoints documented in its README, since SHADOW is central to the system, they basically dictate the whole AETHER communication
-- [ ] Improve READMEs in all modules, so that they link to each other (for people who stumble upon one of them, to easily navigate the entire thing hopefully)
+- [ ] [IMPORTANT] Improve READMEs in all modules, so that they link to each other (for people who stumble upon one of them, to easily navigate the entire thing hopefully)
 - [ ] Make everything prettyyy -> use ASCII art for READMEs
 
 ## Definition of done

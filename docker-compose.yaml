@@ -1,0 +1,27 @@
+services:
+    shadow:
+        build:
+            context: SHADOW/
+            dockerfile: Dockerfile
+        image: shadow:latest
+        container_name: shadow
+        ports:
+            - "9999:9999"
+        environment:
+            - SHADOW_URL=0.0.0.0
+            - SHADOW_PORT=9999
+            - SHADOW_API_PATH=/api/v1/charon
+        restart: unless-stopped
+    charon:
+        build:
+            context: CHARON/
+            dockerfile: Dockerfile
+        image: charon:latest
+        container_name: charon
+        stdin_open: true
+        tty: true
+        environment:
+            - SHADOW_URL=http://shadow
+            - SHADOW_PORT=9999
+        restart: unless-stopped
+    # ghost-builder: TODO
