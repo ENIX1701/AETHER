@@ -10,7 +10,6 @@ services:
         environment:
             - SHADOW_URL=0.0.0.0
             - SHADOW_PORT=9999
-            - SHADOW_API_PATH=/api/v1/charon
         restart: unless-stopped
     charon:
         build:
@@ -23,5 +22,6 @@ services:
         environment:
             - SHADOW_URL=http://shadow
             - SHADOW_PORT=9999
+            - SHADOW_API_PATH=/api/v1/charon
         restart: unless-stopped
     # ghost-builder: TODO
