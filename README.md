@@ -1,28 +1,65 @@
 <img src="aether-ascii.png" alt="AETHER" style="width: 100%;">
 
-AETHER is a C2 framework written in Rust with implants in C or C++. It's main goal is to aid red teams in tests and assignments.
+# AETHER
 
-## TODO:
-- [x] (GHOST) Design GHOST MVP functionality
-- [x] (GHOST) Persistence mechanisms
-- [x] (GHOST) Basic connectivity
-- [x] (SHADOW) Think through the SHADOW component
-- [x] (SHADOW) Basic connectivity (and keepalive/status probe) -> done other way around: GHOSTs send heartbeats to SHADOW to let it know they're still alive
-- [ ] (SHADOW) nginx with user-agent filtering
-- [x] (CHARON) Create a moodboard of TUI designs -> kind of done, TUI done with ratatui, which is a moodboard itself kinda..
-- [x] (CHARON) Basic menu panel 
-- [ ] (CHARON) Modular architecture schema -> generate GHOSTs with custom configurations
-- [x] (AETHER) Create an interface guide for all communication interfaces (will make maintenance so much easier) -> SHADOW endpoints documented in its README, since SHADOW is central to the system, they basically dictate the whole AETHER communication
-- [ ] [IMPORTANT] Improve READMEs in all modules, so that they link to each other (for people who stumble upon one of them, to easily navigate the entire thing hopefully)
-- [ ] Make everything prettyyy -> use ASCII art for READMEs
+AETHER is a C2 framework designed for red team engagements and educational purposes.
 
-## Definition of done
+## Components
 
-I'll consider the first release version of AETHER done, when the following criteria are met:
-1. All CHARON, GHOST and SHADOW are done on their own (CHARON - done; GHOST - done; SHADOW - done, with complete test-suite)
-2. CHARON is fully integrated with SHADOW (done)
-3. SHADOW can send commands and receive data from GHOSTs (done)
-4. GHOSTs are deployable to Linux machines and are not instantly deleted (done; currently the deploy is manual)
-5. ~~All the modules~~ SHADOW has at least 60% unit test coverage (preferably >90%, but we know how those kinds of wishes end) -> (done)
-6. The communication interfaces are thoroughly documented (basic documentation in place in SHADOW repository, I consider this done)
-7. The whole project is deployable with a single Docker compose file (server with compiled implant download + CHARON in another container with GHOST builder fully implemented) with step-by-step instructions on how to deploy and use it
+AETHER is composed of three primary modules. Each of them is capable of running independently, but designed to work in unison.
+
+### [GHOST](https://github.com/ENIX1701/GHOST)
+
+Modular C++ implant deployable to Linux hosts. It features toggleable capabilities mapped to the [MITRE ATT&CK](https://attack.mitre.org/) framework.
+
+### [SHADOW](https://github.com/ENIX1701/SHADOW)
+
+Heart of AETHER. C2 server written in Rust. It exposes a RESTful API to handle agent communication, tasking and aggregation. It also features endpoints useful for creating user interfaces. Speaking of those...
+
+### [CHARON](https://github.com/ENIX1701/CHARON)
+
+Terminal user interface written in Rust. Completes SHADOW and gives unfathomable power to any operator who takes its call. Enables agent status visualization, payload crafting and remote command execution.
+
+## Prerequisites
+
+`Docker` with `Compose` plugin. That's basically it.
+
+## Run
+
+AETHER is designed to be deployed instantly using Docker Compose. It deploys SHADOW and CHARON. They use a private container network, how cool is that?
+
+```bash
+# build and deploy the images
+docker compose up --build -d
+```
+
+Access CHARON with:
+```bash
+docker attach charon
+```
+
+## Roadmap (v1.0)
+
+The goal of v1.0 is to provide an out-of-the-box fully integrated C2 framework.
+
+### Status
+
+- [x] CHARON, SHADOW nad GHOST are fully integrated
+- [x] SHADOW can queue and retrieve back tasks and their results from GHOSTs
+- [x] SHADOW has full API test coverage
+- [x] GHOST builder implemented in CHARON
+- [ ] GHOST deploy via SHADOW
+
+### Future
+
+- [ ] Unified logging in each module
+- [ ] Persistent storage for SHADOW and CHARON
+
+## Legal
+
+> [!IMPORTANT]
+> This software is for educational purposes and authorized red team engagements only. The authors are not responsible for misuse.
+
+---
+
+Special thanks to [awesome-readme](https://github.com/matiassingers/awesome-readme) for README ideas and to [readme.so](https://readme.so/) for helping me make this one coherent at all :3

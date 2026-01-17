@@ -18,11 +18,11 @@ The goal of AETHER v1.0 is to provide a fully integrated C2 framework where SHAD
 - CHARON, GHOST and SHADOW are individually functional in current scope
 - CHARON <-> SHADOW <-> GHOST integrations complete
 - SHADOW has full API test coverage
+- GHOST builder
 
 ### Missing
 
 - GHOST deploy orchestration in AETHER docker compose
-- GHOST builder
 
 ## 3. Deployment strategy
 
@@ -31,8 +31,8 @@ The goal of AETHER v1.0 is to provide a fully integrated C2 framework where SHAD
 
 ## Checklist
 
-- [ ] GHOST builder in CHARON
-- [ ] SHADOW serves ready GHOST binaries
+- [x] GHOST builder in CHARON
+- [ ] SHADOW serves ready GHOST binaries -> how to do that in Docker? possible to create a temp container for build and just copy out the binary to serve?
 - [ ] Redo AETHER README
 - [ ] Manually test whole flow descibed in main README
 - [ ] Tag v1.0 in git
