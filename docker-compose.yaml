@@ -7,10 +7,13 @@ services:
         container_name: shadow
         ports:
             - "9999:9999"
+        volumes:
+            - ./GHOST:/usr/src/GHOST:ro
+            - shadow-builds:/home/shadowuser/builds
         environment:
-            - SHADOW_URL=0.0.0.0
-            - SHADOW_PORT=9999
+            - GHOST_SOURCE_PATH=/usr/src/GHOST
         restart: unless-stopped
+
     charon:
         build:
             context: CHARON/
@@ -22,6 +25,17 @@ services:
         environment:
             - SHADOW_URL=http://shadow
             - SHADOW_PORT=9999
-            - SHADOW_API_PATH=/api/v1/charon
         restart: unless-stopped
-    # ghost-builder: TODO
+
+    ghost:
+        build:
+            context: GHOST/
+            dockerfile: Dockerfile
+        depends_on:
+            - shadow
+        environment:
+            - SHADOW_URL=shadow
+            - SHADOW_PORT=9999
+
+volumes:
+    shadow-builds:
