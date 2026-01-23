@@ -10,8 +10,11 @@ services:
         volumes:
             - ./GHOST:/usr/src/GHOST:ro
             - shadow-builds:/home/shadowuser/builds
+            - shadow-ccache:/home/shadowuser/.ccache
         environment:
             - GHOST_SOURCE_PATH=/usr/src/GHOST
+        networks:
+            - aether-network
         restart: unless-stopped
 
     charon:
@@ -25,17 +28,30 @@ services:
         environment:
             - SHADOW_URL=http://shadow
             - SHADOW_PORT=9999
+        networks:
+            - aether-network
         restart: unless-stopped
 
     ghost:
+        profiles:
+            - sandbox
+        deploy:
+            replicas: 1
         build:
             context: GHOST/
             dockerfile: Dockerfile
         depends_on:
             - shadow
         environment:
-            - SHADOW_URL=shadow
+            - SHADOW_URL=shadow     # not seen???
             - SHADOW_PORT=9999
+        networks:
+            - aether-network
 
 volumes:
     shadow-builds:
+    shadow-ccache:
+
+networks:
+    aether-network:
+        driver: bridge
