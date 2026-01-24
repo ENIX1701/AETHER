@@ -42,8 +42,8 @@ docker attach charon
 
 If you don't want to go through the hassle of building and deploying your own GHOSTs, but still want to feel the thrill of being a C2 operator, here's what I've done for you:
 ```bash
-# this spawns SHADOW + CHARON and 5 GHOSTs :3 
-docker compose --profile sandbox up --scale ghost=5
+# this spawns SHADOW + CHARON and 3 GHOSTs :3 
+docker compose --profile sandbox up --scale ghost=3
 ```
 
 These synthetic GHOSTs work as you'd expect them to. Which is exactly as they would in real-world deploy. Check it out for yourself!

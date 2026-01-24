@@ -43,7 +43,7 @@ services:
         depends_on:
             - shadow
         environment:
-            - SHADOW_URL=shadow     # not seen???
+            - SHADOW_URL=shadow
             - SHADOW_PORT=9999
         networks:
             - aether-network
