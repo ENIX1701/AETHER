@@ -29,6 +29,8 @@ Terminal user interface written in Rust. Completes SHADOW and gives unfathomable
 AETHER is designed to be deployed instantly using Docker Compose. It deploys SHADOW and CHARON. They use a private container network, how cool is that?
 
 ```bash
+git clone --recurse-submodules https://github.com/ENIX1701/AETHER
+
 # build and deploy the images
 docker compose up --build -d
 ```

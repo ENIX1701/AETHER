@@ -1,0 +1,9 @@
+[submodule "SHADOW"]
+	path = SHADOW
+	url = https://github.com/ENIX1701/SHADOW
+[submodule "GHOST"]
+	path = GHOST
+	url = https://github.com/ENIX1701/GHOST
+[submodule "CHARON"]
+	path = CHARON
+	url = https://github.com/ENIX1701/CHARON
