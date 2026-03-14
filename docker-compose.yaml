@@ -42,6 +42,7 @@ services:
             dockerfile: Dockerfile
             args:
                 - IMPACT_LEVEL=${GHOST_IMPACT_LEVEL:-TEST}
+                - SCENARIO_MODE=${GHOST_SCENARIO_MODE:-NONE}
         depends_on:
             - shadow
         environment:
