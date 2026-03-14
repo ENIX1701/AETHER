@@ -48,7 +48,7 @@ sed -i "s/project(GHOST VERSION .*)/project(GHOST VERSION $VERSION)/" CMakeLists
 mkdir -p build
 cd build
 
-cmake .. > /dev/null    # TODO: check which parameters should be present in release version (either TEST or other benign combination; think about releasing scenario mode as binaries)
+cmake -DIMPACT_LEVEL=TEST .. > /dev/null
 make -j$(nproc) > /dev/null
 
 echo "GHOST built :3"

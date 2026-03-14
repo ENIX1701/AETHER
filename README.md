@@ -46,6 +46,10 @@ If you don't want to go through the hassle of building and deploying your own GH
 ```bash
 # this spawns SHADOW + CHARON and 3 GHOSTs :3 
 docker compose --profile sandbox up --scale ghost=3
+
+# optionally you can also specify tested impact level
+# you do that by passing GHOST_IMPACT_LEVEL before the command, like:
+GHOST_IMPACT_LEVEL=SYSTEM docker compose --profile sandbox up --scale ghost=3
 ```
 
 These synthetic GHOSTs work as you'd expect them to. Which is exactly as they would in real-world deploy. Check it out for yourself!

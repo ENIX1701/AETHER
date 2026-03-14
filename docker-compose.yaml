@@ -40,6 +40,8 @@ services:
         build:
             context: GHOST/
             dockerfile: Dockerfile
+            args:
+                - IMPACT_LEVEL=${GHOST_IMPACT_LEVEL:-TEST}
         depends_on:
             - shadow
         environment:
