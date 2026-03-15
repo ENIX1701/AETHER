@@ -12,6 +12,7 @@ if [ -z "$VERSION" ]; then
     echo "please specify the version QwQ"
     echo "this will (probably) go away in the future"
     echo "but for now be a good kitty and put in that tag :3"
+    exit 1
 fi
 
 BASE_DIR=$(pwd)
