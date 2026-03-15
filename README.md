@@ -50,26 +50,23 @@ docker compose --profile sandbox up --scale ghost=3
 # optionally you can also specify tested impact level
 # you do that by passing GHOST_IMPACT_LEVEL before the command, like:
 GHOST_IMPACT_LEVEL=SYSTEM docker compose --profile sandbox up --scale ghost=3
+
+# you can specify scenarios in the same way
+GHOST_SCENARIO_MODE=APT29 docker compose --profile sandbox up --scale ghost=3
+
+# and even do both at the same time!
+GHOST_IMPACT_LEVEL=SYSTEM GHOST_SCENARIO_MODE=APT29 docker compose --profile sandbox up --scale ghost=3
 ```
 
 These synthetic GHOSTs work as you'd expect them to. Which is exactly as they would in real-world deploy. Check it out for yourself!
 
-## Roadmap (v1.0)
-
-The goal of v1.0 is to provide an out-of-the-box fully integrated C2 framework.
-
-### Status
-
-- [x] CHARON, SHADOW nad GHOST are fully integrated
-- [x] SHADOW can queue and retrieve back tasks and their results from GHOSTs
-- [x] SHADOW has full API test coverage
-- [x] GHOST builder implemented in CHARON
-- [x] GHOST deploy via SHADOW
+## Roadmap (v2.0)
 
 ### Future
 
 - [ ] Unified logging in each module
 - [ ] Persistent storage for SHADOW and CHARON
+- [ ] GHOST architecture refactor for 
 
 ## Legal
 
