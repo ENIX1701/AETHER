@@ -43,6 +43,9 @@ docker attach charon
 ### Sandbox
 
 If you don't want to go through the hassle of building and deploying your own GHOSTs, but still want to feel the thrill of being a C2 operator, here's what I've done for you:
+
+#### Synthetic GHOSTs
+
 ```bash
 # this spawns SHADOW + CHARON and 3 GHOSTs :3 
 docker compose --profile sandbox up --scale ghost=3
@@ -60,13 +63,23 @@ GHOST_IMPACT_LEVEL=SYSTEM GHOST_SCENARIO_MODE=APT29 docker compose --profile san
 
 These synthetic GHOSTs work as you'd expect them to. Which is exactly as they would in real-world deploy. Check it out for yourself!
 
+#### Replay mode
+
+If you want a quicker way to demo this, you can use the built-in replay mode. It lets you try out synthetic scenarios and test the operator workflow on mocked (but realistic!) data!
+
+For detailed usage, head over to the [Manual](https://github.com/ENIX1701/CHARON/blob/main/docs/MANUAL.md).
+
 ## Roadmap (v2.0)
 
 ### Future
 
 - [ ] Unified logging in each module
 - [ ] Persistent storage for SHADOW and CHARON
-- [ ] GHOST architecture refactor for 
+- [ ] GHOST architecture refactor for ???
+- [x] Replay mode
+    - [x] SHADOW-side
+    - [x] CHARON-side
+- [ ] A web version to make testing easier? Idk how I'd go about it tho QwQ
 
 ## Legal
 
